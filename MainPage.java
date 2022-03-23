@@ -5,9 +5,15 @@ class MainPage {
     public static void main(String args[]){
        JFrame frame = new JFrame("My First GUI");
        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-       // frame.setSize(300,300);
+
+       JTextField tf = new JTextField(12);
        JButton button = new JButton("Press");
-       frame.getContentPane().add(BorderLayout.CENTER, button); // Adds Button to content pane of frame
+       JPanel panel = new JPanel();
+       Container pane = panel;
+       pane.add(tf);
+       pane.add(button); // Adds Button to content pane of frame
+       
+       frame.getContentPane().add(pane);
        frame.pack();
        frame.setVisible(true);
     }
